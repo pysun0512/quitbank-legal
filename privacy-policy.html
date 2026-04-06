@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quitbank 개인정보 수집·이용 동의</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, sans-serif;
+      background: #f8f9fa; color: #1a1a1a; line-height: 1.75; font-size: 15px;
+    }
+    .header {
+      background: #00b493; color: white; padding: 32px 24px 28px;
+      position: sticky; top: 0; z-index: 10;
+      box-shadow: 0 2px 12px rgba(0,180,147,.25);
+    }
+    .header-inner { max-width: 720px; margin: 0 auto; }
+    .logo { font-size: 13px; font-weight: 700; letter-spacing: .08em; opacity: .85; margin-bottom: 6px; }
+    .header h1 { font-size: 20px; font-weight: 700; }
+    .header-meta { font-size: 12px; opacity: .75; margin-top: 6px; }
+    .toc-bar {
+      background: white; border-bottom: 1px solid #e8e8e8;
+      padding: 0 24px; overflow-x: auto; white-space: nowrap;
+    }
+    .toc-bar a {
+      display: inline-block; padding: 12px 14px; font-size: 13px;
+      color: #666; text-decoration: none; border-bottom: 2px solid transparent; transition: all .2s;
+    }
+    .toc-bar a:hover { color: #00b493; border-bottom-color: #00b493; }
+    .container { max-width: 720px; margin: 0 auto; padding: 32px 24px 80px; }
+    .intro-box {
+      background: #e8faf6; border: 1px solid #b3ece0; border-left: 4px solid #00b493;
+      border-radius: 8px; padding: 18px 20px; margin-bottom: 28px; font-size: 14px; color: #006d59; line-height: 1.7;
+    }
+    .warn-box {
+      background: #fff3f3; border: 1px solid #ffcdd2; border-left: 4px solid #e53935;
+      border-radius: 8px; padding: 14px 16px; margin: 14px 0; font-size: 13px; color: #8b1a1a; line-height: 1.65;
+    }
+    .info-box {
+      background: #f0fdf9; border: 1px solid #b3ece0;
+      border-radius: 8px; padding: 14px 16px; margin: 14px 0; font-size: 13px; color: #065f46; line-height: 1.65;
+    }
+    .notice-box {
+      background: #fff8e6; border: 1px solid #ffd970; border-left: 4px solid #f5a623;
+      border-radius: 8px; padding: 14px 16px; margin: 14px 0; font-size: 13px; color: #7a5c00; line-height: 1.65;
+    }
+    section {
+      background: white; border-radius: 12px; padding: 28px;
+      margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    h2 {
+      font-size: 16px; font-weight: 700; color: #111; margin-bottom: 18px;
+      padding-bottom: 12px; border-bottom: 1.5px solid #f0f0f0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    h2 .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; background: #00b493; color: white;
+      border-radius: 50%; font-size: 12px; font-weight: 800; flex-shrink: 0;
+    }
+    h3 { font-size: 14px; font-weight: 700; color: #333; margin: 20px 0 10px; }
+    p { margin-bottom: 10px; color: #444; font-size: 14px; }
+    ul, ol { padding-left: 18px; margin-bottom: 12px; }
+    li { margin-bottom: 7px; font-size: 14px; color: #444; }
+    li::marker { color: #00b493; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; border-radius: 8px; overflow: hidden; }
+    th { background: #f5faf9; color: #006d59; font-weight: 700; padding: 10px 12px; text-align: left; border-bottom: 1.5px solid #d4f0e8; }
+    td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; color: #444; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafffe; }
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;
+    }
+    .badge-required { background: #fee2e2; color: #991b1b; }
+    .badge-optional { background: #e0f2fe; color: #0369a1; }
+    .badge-auto { background: #f3e8ff; color: #6b21a8; }
+    .badge-sensitive { background: #fef3c7; color: #92400e; }
+    .contact-box {
+      background: #f0fdf9; border: 1px solid #6ee7d0;
+      border-radius: 8px; padding: 16px 20px; margin: 12px 0;
+    }
+    .contact-box p { margin: 4px 0; font-size: 14px; color: #065f46; }
+    .contact-box strong { color: #00b493; }
+    .footer {
+      max-width: 720px; margin: 0 auto; padding: 0 24px 40px;
+      text-align: center; font-size: 12px; color: #aaa; line-height: 1.8;
+    }
+    .footer a { color: #00b493; text-decoration: none; }
+    a { color: #00b493; }
+    @media(max-width:480px){
+      section{padding:20px 18px;} .header{padding:24px 18px;}
+      h2{font-size:15px;} table{font-size:12px;} th,td{padding:8px 10px;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="logo">🚭 QUITBANK</div>
+    <h1>개인정보 수집·이용 동의</h1>
+    <div class="header-meta">시행일: 2026년 4월 6일 &nbsp;|&nbsp; 저금통컴퍼니 (사업자등록번호: 516-74-00578)</div>
+  </div>
+</div>
+
+<nav class="toc-bar">
+  <a href="#s1">수집항목·목적</a>
+  <a href="#s2">설문데이터</a>
+  <a href="#s3">민감정보</a>
+  <a href="#s4">제3자제공</a>
+  <a href="#s5">위탁</a>
+  <a href="#s6">국외이전</a>
+  <a href="#s7">보유·파기</a>
+  <a href="#s8">이용자권리</a>
+  <a href="#s9">자동수집</a>
+  <a href="#s10">안전조치</a>
+  <a href="#s11">책임자</a>
+  <a href="#s12">동의거부</a>
+  <a href="#s13">변경공지</a>
+</nav>
+
+<div class="container">
+
+  <div class="intro-box">
+    <strong>저금통컴퍼니(이하 "회사")는 「개인정보 보호법」 및 관련 법령을 준수합니다.</strong><br>
+    이 방침은 Quitbank 서비스에서 수집하는 모든 개인정보의 항목, 목적, 보유기간, 처리 방법을 안내합니다.<br>
+    Quitbank는 AI 기반 금연 지원 서비스로, 수집된 정보는 <strong>오직 금연 컨설팅 개인화 목적으로만</strong> 사용됩니다.
+  </div>
+
+  <!-- 제1조 -->
+  <section id="s1">
+    <h2><span class="num">1</span>수집하는 개인정보 항목 및 이용 목적</h2>
+
+    <h3>가. 토스 로그인 — <span class="badge badge-required">필수</span></h3>
+    <p>서비스 이용을 위해 토스 로그인 시 아래 항목을 수집합니다. 동의하지 않으면 서비스 이용이 불가합니다.</p>
+    <table>
+      <thead><tr><th>수집 항목</th><th>이용 목적</th><th>보유 기간</th></tr></thead>
+      <tbody>
+        <tr><td>이름 (USER_NAME)</td><td>회원 식별, AI 컨설팅 호칭 사용 ("홍길동님, 오늘 하루도 잘 버티셨어요")</td><td>탈퇴 시까지</td></tr>
+        <tr><td>휴대전화번호 (USER_PHONE)</td><td>회원 식별, 본인 확인, 서비스 관련 알림 발송</td><td>탈퇴 시까지</td></tr>
+        <tr><td>토스 계정 식별자 (userKey)</td><td>로그인 연동, 회원 고유 식별 (DB 기본키)</td><td>탈퇴 시까지</td></tr>
+      </tbody>
+    </table>
+
+    <h3>나. 토스 로그인 — <span class="badge badge-optional">선택</span></h3>
+    <p>아래 항목은 AI 컨설팅 개인화를 위해 수집합니다. 동의하지 않아도 기본 서비스를 이용할 수 있으나 맞춤형 AI 상담이 일부 제한됩니다.</p>
+    <table>
+      <thead><tr><th>수집 항목</th><th>이용 목적</th><th>미동의 시 불이익</th><th>보유 기간</th></tr></thead>
+      <tbody>
+        <tr><td>성별 (USER_GENDER)</td><td>성별에 맞는 AI 컨설팅 전략 적용 (예: 여성 흡연자의 체중 걱정에 대한 근거 기반 응답)</td><td>AI 개인화 일부 제한</td><td>탈퇴 시까지</td></tr>
+        <tr><td>생년월일 (USER_BIRTHDAY)</td><td>연령대별 맞춤 AI 컨설팅 톤·전략 적용</td><td>AI 개인화 일부 제한</td><td>탈퇴 시까지</td></tr>
+      </tbody>
+    </table>
+
+    <h3>다. 자동 생성·수집 — <span class="badge badge-auto">자동</span></h3>
+    <table>
+      <thead><tr><th>수집 항목</th><th>이용 목적</th><th>보유 기간</th></tr></thead>
+      <tbody>
+        <tr><td>금연 기록 (날짜별 현황)</td><td>금연 현황 추적, 통계 제공</td><td>탈퇴 시까지</td></tr>
+        <tr><td>저금 내역 (금액, 방법, 날짜)</td><td>저금 현황 추적, 목표 달성 진행률 계산</td><td>탈퇴 시까지</td></tr>
+        <tr><td>AI 채팅 내역 (질문·응답 전체)</td><td>AI 상담 맥락 유지 (대화 연속성 보장), 서비스 품질 개선</td><td>탈퇴 시까지</td></tr>
+        <tr><td>기기 식별자 (device_id)</td><td>로그인 연동 전 기기별 데이터 연속성 보장</td><td>탈퇴 시까지</td></tr>
+        <tr><td>앱 이용 기록, 접속 로그</td><td>서비스 최적화, 장애 대응, 부정 이용 방지</td><td>3개월 (통신비밀보호법)</td></tr>
+        <tr><td>결제 기록 (유료 서비스 이용 시)</td><td>결제 관리, 환불 처리, 분쟁 해결</td><td>5년 (전자상거래법)</td></tr>
+        <tr><td>AI 개인화 프로필 (ai_profile)</td><td>설문 응답 분석 결과를 구조화하여 저장 → AI 상담 개인화에 지속 활용</td><td>탈퇴 시까지</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 제2조 -->
+  <section id="s2">
+    <h2><span class="num">2</span>AI 금연 컨설팅을 위한 심리·행동 설문 데이터 <span class="badge badge-sensitive">건강 관련 민감정보</span></h2>
+
+    <div class="warn-box">
+      ⚠️ <strong>별도 동의가 필요한 민감 정보입니다.</strong><br>
+      아래 설문 데이터는 건강 상태·심리 상태·정신건강에 관한 민감 정보에 해당할 수 있습니다.<br>
+      이용자의 <strong>명시적이고 별도의 동의</strong>를 받아 처리하며, AI 금연 컨설팅 개인화 목적으로만 사용합니다.<br>
+      동의하지 않아도 기본 서비스(금연 현황 추적, 저금 기록) 이용은 가능하나 AI 맞춤 컨설팅이 제한됩니다.
+    </div>
+
+    <div class="notice-box">
+      📋 온보딩 심리 설문(20문항)은 금연 관련 학술 논문 30편+ 기반으로 설계되었으며, Supabase DB의 <code>survey_responses</code> 컬럼(JSONB)에 저장되어 Claude AI 시스템 프롬프트 컨텍스트로 삽입됩니다.<br>
+      <strong>이 데이터는 광고·마케팅·제3자 판매에 절대 사용되지 않습니다.</strong>
+    </div>
+
+    <table>
+      <thead><tr><th>섹션</th><th>수집 항목 (20문항)</th><th>이용 목적</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>흡연 현황</strong><br><small style="color:#888">Q1~Q3</small></td>
+          <td>하루 흡연량 구간, 기상 후 첫 담배까지 시간, 담배 유형 (일반/전자/혼용)</td>
+          <td>니코틴 의존도(FTND) 추정, NRT 권고 수준 결정, 교육 방향 설정</td>
+        </tr>
+        <tr>
+          <td><strong>금연 의지·준비</strong><br><small style="color:#888">Q4~Q7</small></td>
+          <td>현재 금연 준비 단계(TTM), 자기효능감, 과거 금연 시도 횟수, 최장 금연 기간, 과거 실패 이유</td>
+          <td>AI 상담 톤·전략 결정, 취약 구간 집중 지원 설계, 마일스톤 개인화</td>
+        </tr>
+        <tr>
+          <td><strong>심리·정신건강</strong><br><small style="color:#888">Q8~Q10</small></td>
+          <td>최근 2주 우울 증상 여부(PHQ-2 스크리닝), 평소 스트레스 수준, 스트레스 해소 방법</td>
+          <td>CBT-D 개입 필요도 판단, 갈망 위기 시 개인화 대안 행동 제안, 보건소 연계 여부 결정</td>
+        </tr>
+        <tr>
+          <td><strong>동기·가치</strong><br><small style="color:#888">Q11~Q13</small></td>
+          <td>금연 핵심 이유(1순위), 금연 후 걱정 사항, 저금 목표 용도</td>
+          <td>위기 시 가치 재확인 메시지 개인화, 이득·손실 프레이밍 방향 결정</td>
+        </tr>
+        <tr>
+          <td><strong>사회·환경</strong><br><small style="color:#888">Q14~Q16</small></td>
+          <td>동거인 중 흡연자 여부, 친구·동료 중 흡연자 비율, 응원해줄 주변인 여부</td>
+          <td>AI 관계적 지지 강도 조정, 사교 상황 if-then 계획 설계, 환경 통제 전략 결정</td>
+        </tr>
+        <tr>
+          <td><strong>흡연 패턴·트리거</strong><br><small style="color:#888">Q17~Q19</small></td>
+          <td>주요 흡연 장소, 주요 흡연 트리거 상황, 음주 빈도</td>
+          <td>개인화 if-then 계획 자동 생성, 고위험 트리거 지도 생성, 음주 상황 대응 설계</td>
+        </tr>
+        <tr>
+          <td><strong>실행 계획</strong><br><small style="color:#888">Q20</small></td>
+          <td>금연 시작 예정일</td>
+          <td>TTM 준비 단계 확인, D-1 체크리스트 발송, 금연일 알림 설계</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      💡 <strong>AI 모델 비학습 보장:</strong> Anthropic Claude API로 전송된 설문 데이터는 응답 생성 후 즉시 파기되며, AI 모델 학습에 절대 사용되지 않습니다. 이는 Anthropic의 API 정책에 의해 보장됩니다.
+    </div>
+  </section>
+
+  <!-- 제3조 -->
+  <section id="s3">
+    <h2><span class="num">3</span>건강 관련 민감 정보 처리 원칙</h2>
+    <p>「개인정보 보호법」 제23조에 따라 건강 관련 민감 정보를 처리할 때 다음 원칙을 철저히 준수합니다.</p>
+    <ul>
+      <li><strong>별도 명시적 동의</strong>: 일반 개인정보 동의와 분리하여, 민감 정보에 대해 별도로 명시적 동의를 받습니다</li>
+      <li><strong>목적 외 이용 금지</strong>: AI 금연 컨설팅 개인화 외 다른 목적으로 절대 사용하지 않습니다</li>
+      <li><strong>제3자 제공 원칙적 금지</strong>: 동의 없이 어떠한 제3자에게도 민감 정보를 제공하지 않습니다</li>
+      <li><strong>광고·마케팅 사용 금지</strong>: 수집된 건강 및 심리 정보는 광고 타겟팅이나 마케팅에 절대 사용되지 않습니다</li>
+      <li><strong>데이터 판매 금지</strong>: 이용자의 건강 데이터를 어떠한 경우에도 판매하거나 교환하지 않습니다</li>
+      <li><strong>AI 처리 투명성</strong>: Claude API 처리 시 어떤 데이터가 전송되는지 본 방침에 명시하며, 이용자는 언제든 열람을 요청할 수 있습니다</li>
+      <li><strong>PHQ-2 우울 스크리닝 고지</strong>: Q8(PHQ-2) 결과는 의료 진단이 아닌 AI 상담 맞춤화를 위한 참고 정보이며, 앱 내에서 이를 명확히 고지합니다</li>
+    </ul>
+  </section>
+
+  <!-- 제4조 -->
+  <section id="s4">
+    <h2><span class="num">4</span>개인정보의 제3자 제공</h2>
+    <p>회사는 원칙적으로 이용자의 개인정보를 제3자에게 제공하지 않습니다. 다만 아래의 경우에는 예외로 합니다.</p>
+    <ul>
+      <li>이용자가 사전에 동의한 경우</li>
+      <li>법령의 규정에 의거하거나 수사기관의 적법한 요청이 있는 경우</li>
+      <li>이용자 또는 제3자의 생명·신체·재산을 보호하기 위해 불가피한 경우</li>
+    </ul>
+    <div class="info-box">
+      <strong>현재 Quitbank는 이용자의 개인정보를 제3자에게 제공하지 않습니다.</strong><br>
+      아래 '위탁' 항목의 업체들은 서비스 제공을 위한 수탁자로, 법적으로 제3자 제공과 다릅니다.
+    </div>
+  </section>
+
+  <!-- 제5조 -->
+  <section id="s5">
+    <h2><span class="num">5</span>개인정보 처리 업무 위탁</h2>
+    <p>회사는 서비스 제공을 위해 아래 업체에 개인정보 처리를 위탁합니다. 위탁 계약 시 개인정보를 안전하게 처리하도록 필요한 사항을 규정하고, 이를 준수하는지 관리·감독합니다.</p>
+    <table>
+      <thead><tr><th>수탁업체</th><th>위탁 업무</th><th>전송 데이터</th><th>보유 기간</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Supabase Inc.</strong><br><small style="color:#888">미국 (서울 ap-northeast-2 리전)</small></td>
+          <td>데이터베이스 서버 운영<br><small>(quit_profiles, savings, chat_history, subscriptions 테이블)</small></td>
+          <td>서비스 이용 데이터 전반 (프로필, 설문, 채팅, 저금 기록)</td>
+          <td>위탁 계약 기간</td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic, PBC</strong><br><small style="color:#888">미국</small></td>
+          <td>AI 금연 상담 응답 생성<br><small>(Claude API, Supabase Edge Function 경유 — 프론트엔드 미노출)</small></td>
+          <td>이름, 성별, 나이, 심리 설문 응답(Q1~Q20), AI 채팅 입력 텍스트<br><small>※ 모델 학습에 사용되지 않음 (Anthropic API 정책)</small></td>
+          <td><strong>처리 완료 후 즉시 파기</strong></td>
+        </tr>
+        <tr>
+          <td><strong>주식회사 비바리퍼블리카 (토스)</strong><br><small style="color:#888">대한민국</small></td>
+          <td>토스 로그인 인증, 앱인토스 IAP 결제, 기능성 푸시 알림 발송</td>
+          <td>userKey, 결제 정보, 알림 토큰</td>
+          <td>위탁 계약 기간</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 제6조 -->
+  <section id="s6">
+    <h2><span class="num">6</span>개인정보의 국외 이전</h2>
+    <p>회사는 서비스 제공을 위해 아래와 같이 개인정보를 국외로 이전합니다. 「개인정보 보호법」 제28조의8에 따라 이전받는 자의 성명, 이전 목적, 항목, 보유 기간을 고지합니다.</p>
+    <table>
+      <thead><tr><th>업체명</th><th>국가</th><th>이전 항목</th><th>이전 목적</th><th>보유 기간</th><th>연락처</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Supabase Inc.</strong></td>
+          <td>미국<br><small>(실제 저장: 서울 리전)</small></td>
+          <td>서비스 이용 데이터 전반</td>
+          <td>DB 서버 운영</td>
+          <td>위탁 계약 기간</td>
+          <td><a href="https://supabase.com/privacy" target="_blank">개인정보처리방침</a></td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic, PBC</strong></td>
+          <td>미국</td>
+          <td>이름, 성별, 나이, 설문 응답 20문항, AI 채팅 입력 텍스트</td>
+          <td>AI 상담 응답 생성</td>
+          <td>처리 완료 후 즉시 파기</td>
+          <td><a href="https://www.anthropic.com/privacy" target="_blank">개인정보처리방침</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      국외 이전에 동의하지 않으실 수 있으나, Supabase 및 Anthropic은 서비스 핵심 인프라로 동의하지 않는 경우 서비스 이용이 불가합니다.
+    </div>
+  </section>
+
+  <!-- 제7조 -->
+  <section id="s7">
+    <h2><span class="num">7</span>개인정보 보유 기간 및 파기</h2>
+
+    <h3>가. 보유 기간</h3>
+    <p>회사는 개인정보 수집 및 이용 목적이 달성된 후 즉시 파기합니다. 단, 관계 법령에 따라 아래 기간 동안 보존합니다.</p>
+    <table>
+      <thead><tr><th>보존 항목</th><th>보존 근거</th><th>보존 기간</th></tr></thead>
+      <tbody>
+        <tr><td>계약·청약 철회 등에 관한 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률</td><td>5년</td></tr>
+        <tr><td>대금 결제 및 재화 공급에 관한 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률</td><td>5년</td></tr>
+        <tr><td>소비자 불만·분쟁 처리에 관한 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률</td><td>3년</td></tr>
+        <tr><td>접속 로그, 기기 정보</td><td>통신비밀보호법</td><td>3개월</td></tr>
+      </tbody>
+    </table>
+
+    <h3>나. 파기 절차 및 방법</h3>
+    <ol>
+      <li>회원 탈퇴 신청 즉시 아래 데이터를 전량 삭제합니다:
+        <ul style="margin-top:6px;">
+          <li>quit_profiles: 이름, 흡연 정보, 설문 응답(survey_responses), AI 개인화 프로필(ai_profile) 전체</li>
+          <li>chat_history: AI 채팅 질문·응답 내역 전체</li>
+          <li>savings: 저금 내역 전체</li>
+          <li>subscriptions: 구독 상태 정보</li>
+        </ul>
+      </li>
+      <li>전자 파일은 복구 불가능한 방법으로 영구 삭제합니다</li>
+      <li>토스 로그인 연결 해제(UNLINK), 약관 철회(WITHDRAWAL_TERMS), 토스 회원 탈퇴(WITHDRAWAL_TOSS) 이벤트 수신 시 동일하게 처리합니다</li>
+      <li>법령 보존 의무 항목은 해당 기간 종료 후 즉시 삭제합니다</li>
+      <li>탈퇴 후 동일 토스 계정으로 재가입이 가능하나, 이전 데이터는 복구되지 않습니다</li>
+    </ol>
+  </section>
+
+  <!-- 제8조 -->
+  <section id="s8">
+    <h2><span class="num">8</span>이용자의 권리 및 행사 방법</h2>
+    <p>이용자는 언제든지 다음 권리를 행사할 수 있습니다. <strong>거주 지역에 관계없이 모든 이용자에게 동일한 권리가 보장됩니다.</strong></p>
+    <ul>
+      <li><strong>열람 요청</strong>: 회사가 처리 중인 본인의 개인정보 확인</li>
+      <li><strong>수정·정정 요청</strong>: 부정확한 개인정보 수정</li>
+      <li><strong>삭제 요청</strong>: 개인정보 삭제 (앱 내 탈퇴 또는 이메일 요청)</li>
+      <li><strong>처리 정지 요청</strong>: 특정 개인정보 처리의 일시 정지</li>
+      <li><strong>이동권</strong>: 본인의 개인정보를 구조화된 형태(JSON)로 내보내기 요청</li>
+      <li><strong>동의 철회</strong>: 심리 설문 등 동의 기반 처리에 대한 동의 철회 (기본 서비스 계속 이용 가능)</li>
+    </ul>
+    <div class="contact-box">
+      <p>요청 방법: 이메일 <strong>kangtaeyang123@naver.com</strong> 또는 앱 내 마이페이지</p>
+      <p>처리 기한: 요청 후 <strong>10영업일 이내</strong> 처리</p>
+      <p>본인 확인: 권리 행사 시 본인 확인 절차를 거칩니다</p>
+    </div>
+    <p>만 14세 미만 아동의 경우 법정대리인의 동의가 필요하며, 법정대리인도 동일한 권리를 행사할 수 있습니다.</p>
+    <div class="notice-box">
+      ※ 앱인토스 서비스는 현재 만 19세 이상 이용자를 대상으로 합니다.
+    </div>
+  </section>
+
+  <!-- 제9조 -->
+  <section id="s9">
+    <h2><span class="num">9</span>자동 수집 장치 및 거부 방법</h2>
+    <p>서비스는 서비스 운영을 위해 아래와 같은 정보를 자동으로 수집할 수 있습니다.</p>
+    <ul>
+      <li><strong>앱 이용 기록</strong>: 서비스 접속 시간, 이용 기능, 오류 발생 여부</li>
+      <li><strong>기기 정보</strong>: OS 버전, 앱 버전 (기기 식별에 사용되지 않음)</li>
+      <li><strong>접속 로그</strong>: IP 주소, 접속 시간 (통신비밀보호법에 따라 3개월 보관)</li>
+    </ul>
+    <div class="info-box">
+      앱 이용 기록은 서비스 최적화 및 오류 대응 목적으로만 사용하며, 광고 타겟팅에 사용하지 않습니다.
+    </div>
+  </section>
+
+  <!-- 제10조 -->
+  <section id="s10">
+    <h2><span class="num">10</span>개인정보 안전성 확보 조치</h2>
+    <p>「개인정보 보호법」 제29조에 따라 아래와 같은 안전성 확보 조치를 시행합니다.</p>
+    <ul>
+      <li><strong>전송 구간 암호화</strong>: 모든 데이터 전송에 TLS 1.2 이상 적용 (HTTPS 강제)</li>
+      <li><strong>DB 접근 격리</strong>: Supabase RLS(Row Level Security)로 이용자별 데이터 격리 — 본인 데이터만 접근 가능</li>
+      <li><strong>API 키 서버 격리</strong>: Anthropic API 키 등 모든 외부 서비스 키는 Supabase Edge Function 환경변수에만 저장, 프론트엔드 코드에 절대 미노출</li>
+      <li><strong>서버사이드 AI 처리</strong>: 민감한 AI API 호출은 클라이언트가 아닌 서버(Edge Function)에서만 수행</li>
+      <li><strong>최소 권한 원칙</strong>: DB 접근 권한을 업무 목적에 필요한 최소 범위로 제한</li>
+      <li><strong>접속 이력 관리</strong>: 비정상 접근 패턴 모니터링 및 로그 보관</li>
+      <li><strong>내부 관리</strong>: 개인정보 처리 담당자 최소화, 담당자 대상 보안 교육 실시</li>
+    </ul>
+  </section>
+
+  <!-- 제11조 -->
+  <section id="s11">
+    <h2><span class="num">11</span>개인정보보호 책임자 및 연락처</h2>
+    <div class="contact-box">
+      <p>책임자: <strong>강태양</strong></p>
+      <p>소속: 저금통컴퍼니</p>
+      <p>이메일: <strong>kangtaeyang123@naver.com</strong></p>
+      <p>운영 시간: 평일 10:00 ~ 18:00 (공휴일 제외)</p>
+      <p>문의 후 영업일 기준 <strong>3일 이내</strong> 답변 드립니다</p>
+    </div>
+    <h3>📞 개인정보 침해 신고·상담 기관</h3>
+    <ul>
+      <li>개인정보보호위원회: <a href="https://privacy.go.kr" target="_blank">privacy.go.kr</a> / ☎ 118</li>
+      <li>한국인터넷진흥원 개인정보침해신고센터: <a href="https://privacy.kisa.or.kr" target="_blank">privacy.kisa.or.kr</a> / ☎ 118</li>
+      <li>대검찰청 사이버수사과: <a href="https://www.spo.go.kr" target="_blank">spo.go.kr</a> / ☎ 1301</li>
+      <li>경찰청 사이버안전국: <a href="https://cyberbureau.police.go.kr" target="_blank">cyberbureau.police.go.kr</a> / ☎ 182</li>
+    </ul>
+  </section>
+
+  <!-- 제12조 -->
+  <section id="s12">
+    <h2><span class="num">12</span>동의 거부 권리 및 불이익 안내</h2>
+    <p>이용자는 개인정보 수집·이용에 대한 동의를 거부할 수 있습니다. 항목별 동의 거부 시 불이익은 다음과 같습니다.</p>
+    <table>
+      <thead><tr><th>항목 구분</th><th>동의 거부 시 불이익</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-required">필수</span> 이름, 전화번호, userKey</td><td>서비스 이용 자체 불가 (토스 로그인 기반 서비스)</td></tr>
+        <tr><td><span class="badge badge-optional">선택</span> 성별, 생년월일</td><td>기본 서비스 이용 가능 / AI 컨설팅 개인화 일부 제한</td></tr>
+        <tr><td><span class="badge badge-sensitive">민감</span> 심리 설문 20문항</td><td>기본 서비스 이용 가능 / AI 맞춤 컨설팅 기능 이용 불가</td></tr>
+        <tr><td>국외 이전 (Supabase·Anthropic)</td><td>서비스 이용 불가 (핵심 인프라, 대체 불가)</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      동의 후에도 언제든지 동의를 철회할 수 있습니다. 철회 방법: 앱 내 마이페이지 또는 이메일(kangtaeyang123@naver.com) 요청
+    </div>
+  </section>
+
+  <!-- 제13조 -->
+  <section id="s13">
+    <h2><span class="num">13</span>개인정보처리방침 변경 공지</h2>
+    <ul>
+      <li>본 방침은 <strong>2026년 4월 6일</strong>부터 시행합니다</li>
+      <li>방침 변경 시 시행 <strong>7일 전</strong> 앱 내 공지합니다</li>
+      <li>이용자에게 불리한 변경 또는 새로운 개인정보 수집 항목 추가 시 <strong>30일 전</strong> 공지하고 별도 동의를 받습니다</li>
+      <li>변경 전·후 내용 비교표를 함께 공지합니다</li>
+    </ul>
+
+    <h3>📋 버전 이력</h3>
+    <table>
+      <thead><tr><th>버전</th><th>시행일</th><th>주요 변경 내용</th></tr></thead>
+      <tbody>
+        <tr><td>v1.0</td><td>2026-04-06</td><td>최초 제정</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section style="background:#f5faf9; border:1.5px solid #b3ece0;">
+    <p style="font-size:13px; color:#006d59; text-align:center; margin:0;">
+      <strong>부칙</strong> — 본 방침은 2026년 4월 6일부터 시행합니다.<br>
+      저금통컴퍼니 · 사업자등록번호 516-74-00578 · 대전광역시 유성구<br>
+      <br>
+      <small>본 서비스는 AI 금연 지원 서비스이며, 의료 행위·의료 상담·의약품 처방에 해당하지 않습니다.</small>
+    </p>
+  </section>
+
+</div>
+
+<div class="footer">
+  <p>
+    <a href="./terms-of-service.html">서비스 이용약관</a> &nbsp;|&nbsp;
+    문의: kangtaeyang123@naver.com
+  </p>
+  <p style="margin-top:8px;">© 2026 저금통컴퍼니. All rights reserved.</p>
+</div>
+
+</body>
+</html>
